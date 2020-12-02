@@ -1,1 +1,8 @@
-console.log('This is the Main.js file. It should be the 3rd and final file');
+  function myFunction() {
+    var x = document.getElementById("menu-responsive");
+    if (x.className === "menu-responsive") {
+      x.className += " responsive";
+    } else {
+      x.className = "menu-responsive";
+    }
+  }

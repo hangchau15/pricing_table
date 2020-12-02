@@ -1,0 +1,19 @@
+@media (min-width: 1024px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; }
+    .container .logo-main-menu {
+      margin: auto; }
+    .container .menu-icon {
+      display: none; }
+    .container .nav-menu .menu-responsive, .container .nav-menu .menu-responsive.responsive {
+      display: flex; }
+    .container .nav-menu .menu-responsive li {
+      padding: 12px; }
+      .container .nav-menu .menu-responsive li a {
+        color: white;
+        font-size: 0.8rem;
+        padding: 4px 7px; }
+    .container .nav-menu .active {
+      border: 2px solid white; } }
