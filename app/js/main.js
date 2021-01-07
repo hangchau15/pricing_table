@@ -55,76 +55,82 @@ $(document).ready(function () {
   })
 })
 
-//slideshow using javascript
-let slideIndex = 1
-let myTimer
-let slideshowContainer
-
-window.addEventListener('load', function () {
+// //slideshow using javascript
+slider({})
+function slider({ showDot = true, showArrow = true }) {
+  let slideIndex = 1
+  let myTimer
+  let arrowLeftElm = document.querySelector('.prev')
+  let arrowRightElm = document.querySelector('.next')
+  let dotContainer = document.querySelector('.group-dotsElm')
+  let dotsElm = document.getElementsByClassName('dot')
   showSlides(slideIndex)
   myTimer = setInterval(function () {
-    plusSlides(1)
+    moveSlide(1)
   }, 2000)
-  slideshowContainer = document.getElementsByClassName('slideshow-inner')[0]
-  slideshowContainer = document.getElementsByClassName('slideshow-container')[0]
-  slideshowContainer.addEventListener(
-    'mouseenter',
-    (pause = () => {
-      clearInterval(myTimer)
-    })
-  )
-  slideshowContainer.addEventListener(
-    'mouseleave',
-    (resume = () => {
-      clearInterval(myTimer)
-      myTimer = setInterval(function () {
-        plusSlides(slideIndex)
-      }, 2000)
-    })
-  )
-})
-
-function plusSlides(indexSlideElm) {
-  clearInterval(myTimer)
-  if (indexSlideElm < 0) {
-    showSlides((slideIndex -= 1))
+  function showSlides(indexSlideElm) {
+    let slidesElm = document.getElementsByClassName('mySlides')
+    if (indexSlideElm > slidesElm.length) {
+      slideIndex = 1
+    }
+    if (indexSlideElm < 1) {
+      slideIndex = slidesElm.length
+    }
+    for (let i = 0; i < slidesElm.length; i++) {
+      slidesElm[i].style.display = 'none'
+    }
+    for (let i = 0; i < dotsElm.length; i++) {
+      dotsElm[i].className = dotsElm[i].className.replace(' active', '')
+    }
+    slidesElm[slideIndex - 1].style.display = 'block'
+    dotsElm[slideIndex - 1].className += ' active'
+  }
+  if (showArrow) {
+    arrowLeftElm.onclick = function () {
+      moveSlide(-1)
+    }
+    arrowRightElm.onclick = function () {
+      moveSlide(1)
+    }
   } else {
-    showSlides((slideIndex += 1))
+    arrowLeftElm.style.visibility = 'hidden'
+    arrowRightElm.style.visibility = 'hidden'
   }
-  myTimer =
-    indexSlideElm === -1
-      ? setInterval(function () {
-          plusSlides(indexSlideElm + 2)
-        }, 2000)
-      : setInterval(function () {
-          plusSlides(indexSlideElm + 1)
-        }, 2000)
-}
-function currentSlide(indexSlideElm) {
-  clearInterval(myTimer)
-  myTimer = setInterval(function () {
-    plusSlides(indexSlideElm + 1)
-  }, 2000)
-  showSlides((slideIndex = indexSlideElm))
-}
-
-function showSlides(indexSlideElm) {
-  let slidesElm = document.getElementsByClassName('mySlides')
-  let dots = document.getElementsByClassName('dot')
-  if (indexSlideElm > slidesElm.length) {
-    slideIndex = 1
+  function moveSlide(indexSlideElm) {
+    clearInterval(myTimer)
+    if (indexSlideElm < 0) {
+      showSlides((slideIndex -= 1))
+    } else {
+      showSlides((slideIndex += 1))
+    }
+    myTimer =
+      indexSlideElm === -1
+        ? setInterval(function () {
+            moveSlide(indexSlideElm + 2)
+          }, 2000)
+        : setInterval(function () {
+            moveSlide(indexSlideElm + 1)
+          }, 2000)
   }
-  if (indexSlideElm < 1) {
-    slideIndex = slidesElm.length
+  if (showDot) {
+    for (let i = 0; i < dotsElm.length; i++) {
+      for (let indexDot = i; indexDot < i + 1; indexDot++) {
+        indexDot++
+        dotsElm[i].onclick = function () {
+          currentSlide(indexDot)
+        }
+      }
+    }
+  } else {
+    dotContainer.style.visibility = 'hidden'
   }
-  for (let i = 0; i < slidesElm.length; i++) {
-    slidesElm[i].style.display = 'none'
+  function currentSlide(indexSlideElm) {
+    clearInterval(myTimer)
+    myTimer = setInterval(function () {
+      moveSlide(indexSlideElm + 1)
+    }, 2000)
+    showSlides((slideIndex = indexSlideElm))
   }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(' active', '')
-  }
-  slidesElm[slideIndex - 1].style.display = 'block'
-  dots[slideIndex - 1].className += ' active'
 }
 
 //slideshow footer
@@ -146,5 +152,5 @@ function showSlidesFooter() {
   }
   slideItem[sIndex - 1].style.display = 'block'
   dotItem[sIndex - 1].className += ' active'
-  setTimeout(showSlidesFooter, 4000) // Change image every 2 seconds
+  setTimeout(showSlidesFooter, 4000) // Change image every 4 seconds
 }

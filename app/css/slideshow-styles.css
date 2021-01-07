@@ -14,13 +14,13 @@
       text-align: center;
       margin: 112px 0px 66px; }
       .slideshow-container .slideshow-inner .mySlides .big-title h3 {
-        font-family: "Montserrat", sans-serif; }
+        font-family: 'Montserrat', sans-serif; }
     .slideshow-container .slideshow-inner .mySlides .slide-icon {
       margin-top: 89px; }
     .slideshow-container .slideshow-inner .mySlides .small-title {
       font-size: 1.5rem;
       text-align: center;
-      font-family: "Montserrat - Ultra Light";
+      font-family: 'Montserrat - Ultra Light';
       line-height: 37px;
       font-weight: 300;
       margin-bottom: 79px; }
@@ -48,7 +48,7 @@
     .slideshow-container .slideshow-inner .mySlides a {
       text-decoration: none;
       font-weight: 700;
-      font-family: "Montserrat", sans-serif;
+      font-family: 'Montserrat', sans-serif;
       transition: 0.5s ease; }
     .slideshow-container .slideshow-inner .mySlides .cta:hover .child {
       color: #00bcd4; }
@@ -58,7 +58,8 @@
   .slideshow-container .bg-3 {
     background-image: url("../images/slide-2.webp");
     background-size: cover; }
-  .slideshow-container .prev, .slideshow-container .next {
+  .slideshow-container .prev,
+  .slideshow-container .next {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -73,7 +74,8 @@
     font-size: 2rem;
     transition: 0.6s ease;
     user-select: none; }
-    .slideshow-container .prev:hover, .slideshow-container .next:hover {
+    .slideshow-container .prev:hover,
+    .slideshow-container .next:hover {
       background-color: #00bcd4;
       transition: 0.6s ease; }
   .slideshow-container .next {
@@ -95,7 +97,7 @@
     background-color: #bbb;
     border-radius: 50%;
     display: inline-block;
-    transition: background-color .6s ease; }
+    transition: background-color 0.6s ease; }
   .group-dots .active,
   .group-dots .dot:hover {
     background-color: #08a6bc; }
