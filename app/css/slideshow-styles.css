@@ -97,7 +97,8 @@
     background-color: #bbb;
     border-radius: 50%;
     display: inline-block;
-    transition: background-color 0.6s ease; }
+    transition: background-color 0.6s ease;
+    font-size: 0; }
   .group-dots .active,
   .group-dots .dot:hover {
     background-color: #08a6bc; }
