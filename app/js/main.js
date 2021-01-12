@@ -57,6 +57,13 @@ $(document).ready(function () {
 
 // //slideshow using javascript
 slider('.slideshow-container', 'mySlides', '.group-dots', 'group-dots', {})
+slider(
+  '.slider-footer-project',
+  'row-item',
+  '.group-position',
+  'group-position',
+  { showArrow: false, showDot: false }
+)
 function slider(
   slideContainerClass,
   slideItemClass,
@@ -156,23 +163,23 @@ function slider(
 }
 
 //slideshow footer
-let sIndex = 0
-showSlidesFooter()
+// let sIndex = 0
+// showSlidesFooter()
 
-function showSlidesFooter() {
-  let slideItem = document.getElementsByClassName('row-item')
-  let dotItem = document.getElementsByClassName('dots')
-  for (let i = 0; i < slideItem.length; i++) {
-    slideItem[i].style.display = 'none'
-  }
-  sIndex++
-  if (sIndex > slideItem.length) {
-    sIndex = 1
-  }
-  for (i = 0; i < dotItem.length; i++) {
-    dotItem[i].className = dotItem[i].className.replace(' active', '')
-  }
-  slideItem[sIndex - 1].style.display = 'block'
-  dotItem[sIndex - 1].className += ' active'
-  setTimeout(showSlidesFooter, 4000) // Change image every 4 seconds
-}
+// function showSlidesFooter() {
+//   let slideItem = document.getElementsByClassName('row-item')
+//   let dotItem = document.getElementsByClassName('dots')
+//   for (let i = 0; i < slideItem.length; i++) {
+//     slideItem[i].style.display = 'none'
+//   }
+//   sIndex++
+//   if (sIndex > slideItem.length) {
+//     sIndex = 1
+//   }
+//   for (i = 0; i < dotItem.length; i++) {
+//     dotItem[i].className = dotItem[i].className.replace(' active', '')
+//   }
+//   slideItem[sIndex - 1].style.display = 'block'
+//   dotItem[sIndex - 1].className += ' active'
+//   setTimeout(showSlidesFooter, 4000) // Change image every 4 seconds
+// }

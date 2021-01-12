@@ -2,7 +2,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: "Source Sans Pro", sans-serif; }
+  font-family: 'Source Sans Pro', sans-serif; }
 
 .bold {
   font-weight: bold; }
@@ -47,7 +47,7 @@
   font-weight: 200; }
 
 .font {
-  font-family: "Montserrat", sans-serif; }
+  font-family: 'Montserrat', sans-serif; }
 
 .header {
   transition: 0.5s ease-in-out; }
@@ -108,7 +108,7 @@
       text-transform: uppercase;
       color: #99a9b5;
       padding: 16px;
-      font-family: "Montserrat";
+      font-family: 'Montserrat';
       font-size: 20px; }
 
 .menu-responsive.responsive {
@@ -182,7 +182,7 @@
       text-align: center;
       margin: 112px 0px 66px; }
       .slider-container .slider-item .big-title h3 {
-        font-family: "Montserrat", sans-serif; }
+        font-family: 'Montserrat', sans-serif; }
     .slider-container .slider-item .slide-icon {
       display: block;
       height: auto;
@@ -190,7 +190,7 @@
     .slider-container .slider-item .small-title {
       font-size: 1.5rem;
       text-align: center;
-      font-family: "Montserrat - Ultra Light";
+      font-family: 'Montserrat - Ultra Light';
       line-height: 37px;
       font-weight: 300;
       margin-bottom: 79px; }
@@ -217,7 +217,7 @@
     .slider-container .slider-item a {
       text-decoration: none;
       font-weight: 700;
-      font-family: "Montserrat", sans-serif;
+      font-family: 'Montserrat', sans-serif;
       transition: 0.5s ease; }
     .slider-container .slider-item .cta:hover .child {
       color: #00bcd4; }
@@ -256,7 +256,7 @@
       color: #ffffff;
       padding: 35px 10px; }
       .content .pricing-table-1 .pricing-price .pricing-cost {
-        font-family: "Montserrat", sans-serif;
+        font-family: 'Montserrat', sans-serif;
         font-size: 4.0625rem;
         font-weight: 300;
         letter-spacing: 3.25px; }
@@ -312,7 +312,7 @@
     .content .pricing-table-1-item .bg-pricing-4 {
       background-color: #a289e8; }
     .content .pricing-table-1-item .pricing-row {
-      font-family: "Source Sans Pro";
+      font-family: 'Source Sans Pro';
       border: 1px solid #dfe5e8;
       font-weight: 400;
       font-size: 1rem;
@@ -369,7 +369,7 @@
       line-height: 50px;
       position: relative;
       border-radius: 20px;
-      font-family: "Montserrat", sans-serif;
+      font-family: 'Montserrat', sans-serif;
       transition: 0.5s ease-in-out; }
       .content .pricing-table-footer .order-button .fa-caret-down {
         transform: rotate(-90deg);
@@ -454,13 +454,13 @@
       .content .pricing-table-2-item .price .pricing-cost {
         font-size: 2.625rem;
         font-weight: 200;
-        font-family: "Montserrat", sans-serif; }
+        font-family: 'Montserrat', sans-serif; }
     .content .pricing-table-2-item .table-title {
       margin-top: 34px;
       padding: 26px 10px;
       font-size: 1.5rem;
       font-weight: 600;
-      font-family: "Montserrat", sans-serif; }
+      font-family: 'Montserrat', sans-serif; }
     .content .pricing-table-2-item .medium {
       padding: 7px 10px; }
     .content .pricing-table-2-item .medium-sb {
@@ -497,7 +497,7 @@
         align-items: center;
         width: 152px;
         height: 42px;
-        font-family: "Montserrat";
+        font-family: 'Montserrat';
         text-decoration: none;
         text-transform: uppercase;
         border-radius: 20px;
@@ -526,7 +526,7 @@
       background-image: url(../images/pt2.webp);
       background-size: cover; }
     .content .pricing-table-3 .table-title {
-      font-family: "Montserrat", sans-serif;
+      font-family: 'Montserrat', sans-serif;
       font-size: 2.25rem;
       font-weight: 400;
       letter-spacing: 1.8px;
@@ -761,20 +761,20 @@
     grid-gap: 10px;
     grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
     grid-template-rows: repeat(2, 80px); }
-  .footer-content .widget-projects-clients .row-item {
-    display: none; }
   .footer-content .widget-projects-clients .group-position {
     display: flex;
     justify-content: center;
     align-items: center; }
-    .footer-content .widget-projects-clients .group-position .dots {
+    .footer-content .widget-projects-clients .group-position .dot {
       display: inline-block;
       height: 13px;
       width: 13px;
       border-radius: 50%;
       background-color: #99a9b5;
       margin: 9px;
-      transition: background-color 0.6s ease; }
+      transition: background-color 0.6s ease;
+      font-size: 0px;
+      border: 1px solid #99a9b5; }
     .footer-content .widget-projects-clients .group-position .active {
       background-color: #00bcd4; }
   .footer-content .widget-projects-clients .fade {
@@ -851,7 +851,7 @@
   z-index: 99; }
   .scroll-top-button a {
     color: #99a9b5;
-    font-family: "Material Icons";
+    font-family: 'Material Icons';
     font-size: 24px;
     text-decoration: none; }
     .scroll-top-button a .fa-chevron-right {
