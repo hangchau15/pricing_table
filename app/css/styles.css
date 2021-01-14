@@ -761,11 +761,11 @@
     grid-gap: 10px;
     grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
     grid-template-rows: repeat(2, 80px); }
-  .footer-content .widget-projects-clients .group-position {
+  .footer-content .widget-projects-clients .group-dots {
     display: flex;
     justify-content: center;
     align-items: center; }
-    .footer-content .widget-projects-clients .group-position .dot {
+    .footer-content .widget-projects-clients .group-dots .dot {
       display: inline-block;
       height: 13px;
       width: 13px;
@@ -775,7 +775,7 @@
       transition: background-color 0.6s ease;
       font-size: 0px;
       border: 1px solid #99a9b5; }
-    .footer-content .widget-projects-clients .group-position .active {
+    .footer-content .widget-projects-clients .group-dots .active {
       background-color: #00bcd4; }
   .footer-content .widget-projects-clients .fade {
     -webkit-animation-name: fade;

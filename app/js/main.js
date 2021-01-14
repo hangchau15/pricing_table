@@ -56,47 +56,25 @@ $(document).ready(function () {
 })
 
 // //slideshow using javascript
-slider('.slideshow-container', 'mySlides', '.group-dots', 'group-dots', {})
-slider(
-  '.slider-footer-project',
-  'row-item',
-  '.group-position',
-  'group-position',
-  { showArrow: false, showDot: false }
-)
+slider('.slideshow-container', 'mySlides', {})
+slider('.slide-container', 'slide-item', { showDot: true })
+slider('.slider-footer-project', 'row-item', { showArrow: false })
 function slider(
   slideContainerClass,
   slideItemClass,
-  dotContainerClass,
-  dotClassAppend,
   { showDot = true, showArrow = true }
 ) {
   let slideIndex = 1
   let myTimer
   let arrowLeftElm = document.createElement('a')
   let arrowRightElm = document.createElement('a')
-  let dotsElm = document.getElementsByClassName('dot')
+  let dotsElm = document
+    .querySelector(slideContainerClass)
+    .getElementsByClassName('dot')
   let slidesElm = document.getElementsByClassName(slideItemClass)
   myTimer = setInterval(function () {
     moveSlide(1)
   }, 2000)
-  if (showArrow) {
-    arrowLeftElm.innerHTML = '&#8592;'
-    document.querySelector(slideContainerClass).appendChild(arrowLeftElm)
-    arrowLeftElm.classList.add('prev')
-    arrowRightElm.innerHTML = '&#8594;'
-    document.querySelector(slideContainerClass).appendChild(arrowRightElm)
-    arrowRightElm.classList.add('next')
-    arrowLeftElm.onclick = function () {
-      moveSlide(-1)
-    }
-    arrowRightElm.onclick = function () {
-      moveSlide(1)
-    }
-  } else {
-    arrowLeftElm.style.visibility = 'hidden'
-    arrowRightElm.style.visibility = 'hidden'
-  }
   const moveSlide = (indexSlideElm) => {
     clearInterval(myTimer)
     if (indexSlideElm < 0) {
@@ -113,24 +91,12 @@ function slider(
             moveSlide(indexSlideElm + 1)
           }, 2000)
   }
-  if (showDot) {
-    let dotContainer = document.createElement('div')
-    document.querySelector(slideContainerClass).appendChild(dotContainer)
-    dotContainer.classList.add(dotClassAppend)
-    for (let i = 0; i < slidesElm.length; i++) {
-      let dotsElm = document.createElement('button')
-      dotsElm.innerHTML = slideIndex++
-      document.querySelector(dotContainerClass).appendChild(dotsElm)
-      dotsElm.classList.add('dot')
-    }
-    for (let i = 0; i < dotsElm.length; i++) {
-      for (let indexDot = i; indexDot < i + 1; indexDot++) {
-        indexDot++
-        dotsElm[i].onclick = function () {
-          currentSlide(indexDot)
-        }
-      }
-    }
+  const currentSlide = (indexSlideElm) => {
+    clearInterval(myTimer)
+    myTimer = setInterval(function () {
+      moveSlide(indexSlideElm + 1)
+    }, 2000)
+    showSlides((slideIndex = indexSlideElm))
   }
   const showSlides = (indexSlideElm) => {
     if (indexSlideElm > slidesElm.length) {
@@ -152,12 +118,44 @@ function slider(
       dotsElm[slideIndex - 1].className += ' active'
     }
   }
-  showSlides(slideIndex)
-  const currentSlide = (indexSlideElm) => {
-    clearInterval(myTimer)
-    myTimer = setInterval(function () {
-      moveSlide(indexSlideElm + 1)
-    }, 2000)
-    showSlides((slideIndex = indexSlideElm))
+
+  if (showArrow) {
+    arrowLeftElm.innerHTML = '&#8592;'
+    document.querySelector(slideContainerClass).appendChild(arrowLeftElm)
+    arrowLeftElm.classList.add('prev')
+    arrowRightElm.innerHTML = '&#8594;'
+    document.querySelector(slideContainerClass).appendChild(arrowRightElm)
+    arrowRightElm.classList.add('next')
+    arrowLeftElm.onclick = function () {
+      moveSlide(-1)
+    }
+    arrowRightElm.onclick = function () {
+      moveSlide(1)
+    }
+  } else {
+    arrowLeftElm.style.visibility = 'hidden'
+    arrowRightElm.style.visibility = 'hidden'
   }
+  if (showDot) {
+    let dotContainer = document.createElement('div')
+    let x = document
+      .querySelector(slideContainerClass)
+      .appendChild(dotContainer)
+    dotContainer.classList.add('group-dots')
+    for (let i = 0; i < slidesElm.length; i++) {
+      let dotsElm = document.createElement('button')
+      dotsElm.innerHTML = slideIndex++
+      x.appendChild(dotsElm)
+      dotsElm.classList.add('dot')
+    }
+    for (let i = 0; i < dotsElm.length; i++) {
+      for (let indexDot = i; indexDot < i + 1; indexDot++) {
+        indexDot++
+        dotsElm[i].onclick = function () {
+          currentSlide(indexDot)
+        }
+      }
+    }
+  }
+  showSlides(slideIndex)
 }
