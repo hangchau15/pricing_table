@@ -72,9 +72,14 @@ function slider(
     .querySelector(slideContainerClass)
     .getElementsByClassName('dot')
   let slidesElm = document.getElementsByClassName(slideItemClass)
-  myTimer = setInterval(function () {
-    moveSlide(1)
-  }, 2000)
+  const timing = function (indexCount = 0, index = null) {
+    // clearInterval(myTimer)
+    const val = index ? index : indexSlideElm
+    setInterval(function () {
+      moveSlide(val + indexCount)
+    }, 2000)
+  }
+  myTimer = timing(0, 1)
   const moveSlide = (indexSlideElm) => {
     clearInterval(myTimer)
     if (indexSlideElm < 0) {
@@ -82,20 +87,10 @@ function slider(
     } else {
       showSlides((slideIndex += 1))
     }
-    myTimer =
-      indexSlideElm === -1
-        ? setInterval(function () {
-            moveSlide(indexSlideElm + 2)
-          }, 2000)
-        : setInterval(function () {
-            moveSlide(indexSlideElm + 1)
-          }, 2000)
+    myTimer = indexSlideElm === -1 ? timing(2) : timing(1)
   }
   const currentSlide = (indexSlideElm) => {
-    clearInterval(myTimer)
-    myTimer = setInterval(function () {
-      moveSlide(indexSlideElm + 1)
-    }, 2000)
+    myTimer = timing(1)
     showSlides((slideIndex = indexSlideElm))
   }
   const showSlides = (indexSlideElm) => {
