@@ -50,7 +50,18 @@
 .font {
   font-family: 'Montserrat', sans-serif;
 }
-
+.bg-2 {
+  background-image: url('../images/Typography-01.jpg');
+  background-size: cover;
+}
+.bg-3 {
+  background-image: url('../images/slide-2.webp');
+  background-size: cover;
+}
+.bg-4 {
+  background-image: url('../images/pricing-table-cta1.webp');
+  background-size: cover;
+}
 //header - menu style
 .header {
   transition: 0.5s ease-in-out;
@@ -265,14 +276,6 @@
     .cta:hover .child {
       color: #00bcd4;
     }
-  }
-  .bg-2 {
-    background-image: url('../images/Typography-01.jpg');
-    background-size: cover;
-  }
-  .bg-3 {
-    background-image: url('../images/slide-2.webp');
-    background-size: cover;
   }
 }
 
@@ -967,20 +970,21 @@
   }
 
   .widget-projects-clients {
+    .slider-footer-project {
+      position: relative;
+    }
     .container-project {
       display: grid;
       grid-gap: 10px;
       grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
       grid-template-rows: repeat(2, 80px);
     }
-    // .row-item {
-    //   display: none;
-    // }
     .group-dots {
       display: flex;
       justify-content: center;
       align-items: center;
       .dot {
+        cursor: pointer;
         display: inline-block;
         height: 13px;
         width: 13px;

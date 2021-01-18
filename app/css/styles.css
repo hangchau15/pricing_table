@@ -49,6 +49,18 @@
 .font {
   font-family: 'Montserrat', sans-serif; }
 
+.bg-2 {
+  background-image: url("../images/Typography-01.jpg");
+  background-size: cover; }
+
+.bg-3 {
+  background-image: url("../images/slide-2.webp");
+  background-size: cover; }
+
+.bg-4 {
+  background-image: url("../images/pricing-table-cta1.webp");
+  background-size: cover; }
+
 .header {
   transition: 0.5s ease-in-out; }
 
@@ -221,12 +233,6 @@
       transition: 0.5s ease; }
     .slider-container .slider-item .cta:hover .child {
       color: #00bcd4; }
-  .slider-container .bg-2 {
-    background-image: url("../images/Typography-01.jpg");
-    background-size: cover; }
-  .slider-container .bg-3 {
-    background-image: url("../images/slide-2.webp");
-    background-size: cover; }
 
 .content {
   margin-top: 140px; }
@@ -756,6 +762,8 @@
       border-radius: 50%;
       background-color: #99a9b5;
       margin: 9px; }
+  .footer-content .widget-projects-clients .slider-footer-project {
+    position: relative; }
   .footer-content .widget-projects-clients .container-project {
     display: grid;
     grid-gap: 10px;
@@ -766,6 +774,7 @@
     justify-content: center;
     align-items: center; }
     .footer-content .widget-projects-clients .group-dots .dot {
+      cursor: pointer;
       display: inline-block;
       height: 13px;
       width: 13px;

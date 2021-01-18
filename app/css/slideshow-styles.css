@@ -1,6 +1,6 @@
 .slideshow-container {
   position: relative; }
-  .slideshow-container .slideshow-inner .mySlides {
+  .slideshow-container .mySlides {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -8,29 +8,29 @@
     color: #fff;
     text-align: center;
     position: relative; }
-    .slideshow-container .slideshow-inner .mySlides .big-title {
+    .slideshow-container .mySlides .big-title {
       font-size: 3rem;
       letter-spacing: 3.5px;
       text-align: center;
       margin: 112px 0px 66px; }
-      .slideshow-container .slideshow-inner .mySlides .big-title h3 {
+      .slideshow-container .mySlides .big-title h3 {
         font-family: 'Montserrat', sans-serif; }
-    .slideshow-container .slideshow-inner .mySlides .slide-icon {
+    .slideshow-container .mySlides .slide-icon {
       margin-top: 89px; }
-    .slideshow-container .slideshow-inner .mySlides .small-title {
+    .slideshow-container .mySlides .small-title {
       font-size: 1.5rem;
       text-align: center;
       font-family: 'Montserrat - Ultra Light';
       line-height: 37px;
       font-weight: 300;
       margin-bottom: 79px; }
-    .slideshow-container .slideshow-inner .mySlides .cta-container {
+    .slideshow-container .mySlides .cta-container {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
       padding-bottom: 164px; }
-    .slideshow-container .slideshow-inner .mySlides .cta {
+    .slideshow-container .mySlides .cta {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -43,14 +43,14 @@
       border-radius: 25px;
       margin: 6px 21px;
       transition: 0.5s ease; }
-      .slideshow-container .slideshow-inner .mySlides .cta:hover {
+      .slideshow-container .mySlides .cta:hover {
         border-color: #08a6bc; }
-    .slideshow-container .slideshow-inner .mySlides a {
+    .slideshow-container .mySlides a {
       text-decoration: none;
       font-weight: 700;
       font-family: 'Montserrat', sans-serif;
       transition: 0.5s ease; }
-    .slideshow-container .slideshow-inner .mySlides .cta:hover .child {
+    .slideshow-container .mySlides .cta:hover .child {
       color: #00bcd4; }
   .slideshow-container .bg-2 {
     background-image: url("../images/Typography-01.jpg");

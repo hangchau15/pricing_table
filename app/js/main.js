@@ -56,22 +56,26 @@ $(document).ready(function () {
 })
 
 // //slideshow using javascript
-slider('.slideshow-container', 'mySlides', {})
-slider('.slide-container', 'slide-item', { showDot: true })
-slider('.slider-footer-project', 'row-item', { showArrow: false })
-function slider(
-  slideContainerClass,
-  slideItemClass,
-  { showDot = true, showArrow = true }
-) {
+slider('.slideshow-container', {})
+slider('.slider-footer-project', { showArrow: false })
+function slider(slideContainerClass, { showDot = true, showArrow = true }) {
   let slideIndex = 1
   let myTimer
   let arrowLeftElm = document.createElement('a')
   let arrowRightElm = document.createElement('a')
+  let slidesElm = document
+    .querySelector(slideContainerClass)
+    .getElementsByClassName('slide-item')
   let dotsElm = document
     .querySelector(slideContainerClass)
     .getElementsByClassName('dot')
-  let slidesElm = document.getElementsByClassName(slideItemClass)
+  let slideItem = document.querySelector(slideContainerClass).children
+  const addClassforChild = () => {
+    for (let i = 0; i < slideItem.length; i++) {
+      slideItem[i].classList.add('slide-item')
+    }
+  }
+  addClassforChild()
   myTimer = setInterval(function () {
     moveSlide(1)
   }, 2000)
@@ -138,14 +142,14 @@ function slider(
   }
   if (showDot) {
     let dotContainer = document.createElement('div')
-    let x = document
+    let parent = document
       .querySelector(slideContainerClass)
       .appendChild(dotContainer)
     dotContainer.classList.add('group-dots')
     for (let i = 0; i < slidesElm.length; i++) {
       let dotsElm = document.createElement('button')
       dotsElm.innerHTML = slideIndex++
-      x.appendChild(dotsElm)
+      parent.appendChild(dotsElm)
       dotsElm.classList.add('dot')
     }
     for (let i = 0; i < dotsElm.length; i++) {
