@@ -57,6 +57,7 @@ $(document).ready(function () {
 
 // //slideshow using javascript
 slider('.slideshow-container', {})
+slider('.slide-track', { showArrow: false })
 slider('.slider-footer-project', { showArrow: false })
 function slider(slideContainerClass, { showDot = true, showArrow = true }) {
   let slideIndex = 1
