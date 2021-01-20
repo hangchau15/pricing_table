@@ -97,12 +97,12 @@ function slider(slideContainerClass, { showDot = true, showArrow = true }) {
           }, 2000)
   }
   const currentSlide = (indexSlideElm) => {
+    clearInterval(myTimer)
     myTimer = setInterval(function () {
       moveSlide(indexSlideElm + 1)
     }, 2000)
     showSlides((slideIndex = indexSlideElm))
   }
-
   const showSlides = (indexSlideElm) => {
     if (indexSlideElm > slidesElm.length) {
       slideIndex = 1
