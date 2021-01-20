@@ -87,12 +87,22 @@ function slider(slideContainerClass, { showDot = true, showArrow = true }) {
     } else {
       showSlides((slideIndex += 1))
     }
-    myTimer = indexSlideElm === -1 ? timing(2) : timing(1)
+    myTimer =
+      indexSlideElm === -1
+        ? setInterval(function () {
+            moveSlide(indexSlideElm + 2)
+          }, 2000)
+        : setInterval(function () {
+            moveSlide(indexSlideElm + 1)
+          }, 2000)
   }
   const currentSlide = (indexSlideElm) => {
-    myTimer = timing(1)
+    myTimer = setInterval(function () {
+      moveSlide(indexSlideElm + 1)
+    }, 2000)
     showSlides((slideIndex = indexSlideElm))
   }
+
   const showSlides = (indexSlideElm) => {
     if (indexSlideElm > slidesElm.length) {
       slideIndex = 1
