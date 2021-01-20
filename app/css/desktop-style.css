@@ -1,0 +1,54 @@
+@media (min-width: 1025px) and (max-width: 2560px) {
+  .scroll-top-button {
+    right: 46px; }
+  .menu-icon {
+    display: none; }
+  .big-title {
+    display: inline-block; }
+  .header-menu {
+    display: flex;
+    justify-content: space-between; }
+  .nav-menu {
+    align-items: center; }
+    .nav-menu .menu-responsive, .nav-menu .menu-responsive.responsive {
+      display: flex; }
+    .nav-menu .menu-responsive li {
+      padding: 12px; }
+      .nav-menu .menu-responsive li a {
+        color: white;
+        font-size: 0.875rem;
+        padding: 4px 7px; }
+      .nav-menu .menu-responsive li :hover {
+        color: #08a6bc; }
+    .nav-menu .active {
+      border: 2px solid white; }
+  .slider .arrow-container .arrow-item {
+    font-size: 3rem;
+    height: 80px;
+    width: 80px; }
+  .desc {
+    font-size: 0.875rem; }
+  .footer-content {
+    font-size: 00.875rem; }
+    .footer-content .widgets {
+      display: flex; }
+      .footer-content .widgets .col-3 {
+        width: 263px;
+        margin: 0 12px; }
+      .footer-content .widgets .post-item {
+        display: flex; }
+        .footer-content .widgets .post-item .avt {
+          height: 70px;
+          width: 70px; }
+      .footer-content .widgets .widget-projects-clients .container-project {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 80px 80px; }
+      .footer-content .widgets .widget-flickr-feed .container-feeds {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 80px 80px 80px; }
+    .footer-content .footer-menu-social .container {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row; } }
