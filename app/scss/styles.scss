@@ -62,13 +62,13 @@
   background-image: url('../images/pricing-table-cta1.webp');
   background-size: cover;
 }
-.hidden {
+.d-hidden {
   visibility: hidden;
 }
-.on {
+.d-block {
   display: block;
 }
-.off {
+.d-none {
   display: none;
 }
 //header - menu style
