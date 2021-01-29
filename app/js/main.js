@@ -61,25 +61,19 @@ slider('.slide-track', { showArrow: false })
 slider('.slider-footer-project', { showArrow: false })
 function slider(slideContainerClass, { showDot = true, showArrow = true }) {
   let slideIndex = 1
-  let myTimer
-  let arrowLeftElm = document.createElement('a')
-  let arrowRightElm = document.createElement('a')
-  let slidesElm = document
-    .querySelector(slideContainerClass)
-    .getElementsByClassName('slide-item')
-  let dotsElm = document
-    .querySelector(slideContainerClass)
-    .getElementsByClassName('dot')
-  let slideItem = document.querySelector(slideContainerClass).children
-  const addClassforChild = () => {
-    for (let i = 0; i < slideItem.length; i++) {
-      slideItem[i].classList.add('slide-item')
-    }
-  }
-  addClassforChild()
-  myTimer = setInterval(function () {
+  let myTimer = setInterval(function () {
     moveSlide(1)
   }, 2000)
+  const arrowLeftElm = document.createElement('a')
+  const arrowRightElm = document.createElement('a')
+  const slideContainerElm = document.querySelector(slideContainerClass)
+  const slidesElm = slideContainerElm.getElementsByClassName('slide-item')
+  const dotsElm = slideContainerElm.getElementsByClassName('dot')
+  const slideItem = slideContainerElm.children
+  for (let i = 0; i < slideItem.length; i++) {
+    slideItem[i].classList.add('slide-item')
+  }
+
   const moveSlide = (indexSlideElm) => {
     clearInterval(myTimer)
     if (indexSlideElm < 0) {
@@ -96,13 +90,15 @@ function slider(slideContainerClass, { showDot = true, showArrow = true }) {
             moveSlide(indexSlideElm + 1)
           }, 2000)
   }
-  const currentSlide = (indexSlideElm) => {
+
+  const gotoSlide = (indexSlideElm) => {
     clearInterval(myTimer)
     myTimer = setInterval(function () {
       moveSlide(indexSlideElm + 1)
     }, 2000)
     showSlides((slideIndex = indexSlideElm))
   }
+
   const showSlides = (indexSlideElm) => {
     if (indexSlideElm > slidesElm.length) {
       slideIndex = 1
@@ -111,44 +107,45 @@ function slider(slideContainerClass, { showDot = true, showArrow = true }) {
       slideIndex = slidesElm.length
     }
     for (let i = 0; i < slidesElm.length; i++) {
-      slidesElm[i].style.display = 'none'
+      slidesElm[i].classList.add('d-none')
+      slidesElm[i].classList.remove('d-block')
     }
     for (let i = 0; i < dotsElm.length; i++) {
       if (showDot) {
-        dotsElm[i].className = dotsElm[i].className.replace(' active', '')
+        dotsElm[i].classList.remove('active')
       }
     }
-    slidesElm[slideIndex - 1].style.display = 'block'
+    slidesElm[slideIndex - 1].classList.add('d-block')
+    slidesElm[slideIndex - 1].classList.remove('d-none')
     if (showDot) {
-      dotsElm[slideIndex - 1].className += ' active'
+      dotsElm[slideIndex - 1].classList.add('active')
     }
   }
 
   if (showArrow) {
     arrowLeftElm.innerHTML = '&#8592;'
-    document.querySelector(slideContainerClass).appendChild(arrowLeftElm)
+    slideContainerElm.appendChild(arrowLeftElm)
     arrowLeftElm.classList.add('prev')
     arrowRightElm.innerHTML = '&#8594;'
-    document.querySelector(slideContainerClass).appendChild(arrowRightElm)
+    slideContainerElm.appendChild(arrowRightElm)
     arrowRightElm.classList.add('next')
-    arrowLeftElm.onclick = function () {
+    arrowLeftElm.addEventListener('click', function () {
       moveSlide(-1)
-    }
-    arrowRightElm.onclick = function () {
+    })
+    arrowRightElm.addEventListener('click', function () {
       moveSlide(1)
-    }
+    })
   } else {
-    arrowLeftElm.style.visibility = 'hidden'
-    arrowRightElm.style.visibility = 'hidden'
+    arrowLeftElm.classList.add('d-hidden')
+    arrowRightElm.classList.add('d-hidden')
   }
+
   if (showDot) {
-    let dotContainer = document.createElement('div')
-    let parent = document
-      .querySelector(slideContainerClass)
-      .appendChild(dotContainer)
+    const dotContainer = document.createElement('div')
+    const parent = slideContainerElm.appendChild(dotContainer)
     dotContainer.classList.add('group-dots')
     for (let i = 0; i < slidesElm.length; i++) {
-      let dotsElm = document.createElement('button')
+      const dotsElm = document.createElement('button')
       dotsElm.innerHTML = slideIndex++
       parent.appendChild(dotsElm)
       dotsElm.classList.add('dot')
@@ -156,9 +153,9 @@ function slider(slideContainerClass, { showDot = true, showArrow = true }) {
     for (let i = 0; i < dotsElm.length; i++) {
       for (let indexDot = i; indexDot < i + 1; indexDot++) {
         indexDot++
-        dotsElm[i].onclick = function () {
-          currentSlide(indexDot)
-        }
+        dotsElm[i].addEventListener('click', function () {
+          gotoSlide(indexDot)
+        })
       }
     }
   }

@@ -61,6 +61,15 @@
   background-image: url("../images/pricing-table-cta1.webp");
   background-size: cover; }
 
+.d-hidden {
+  visibility: hidden; }
+
+.d-block {
+  display: block; }
+
+.d-none {
+  display: none; }
+
 .header {
   transition: 0.5s ease-in-out; }
 

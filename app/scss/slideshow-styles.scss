@@ -1,10 +1,10 @@
 .slideshow-container {
   position: relative;
   .mySlides {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
     color: #fff;
     text-align: center;
     position: relative;
@@ -62,6 +62,12 @@
       color: #00bcd4;
     }
   }
+  // .d-block {
+  //   display: block;
+  // }
+  // .d-none {
+  //   display: none;
+  // }
   .bg-2 {
     background-image: url('../images/Typography-01.jpg');
     background-size: cover;
