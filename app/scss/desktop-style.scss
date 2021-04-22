@@ -1,0 +1,81 @@
+@media (min-width: 1025px) and (max-width: 2560px) {
+  
+    .scroll-top-button {
+        right: 46px;
+      }
+    .menu-icon {
+        display: none;
+    }
+    .big-title {
+        display: inline-block;
+    }
+    .header-menu {
+        display: flex;
+        justify-content: space-between;
+    }
+    .nav-menu {
+        align-items: center;
+        .menu-responsive, .menu-responsive.responsive {
+            display: flex;
+        }
+        .menu-responsive li {
+            padding: 12px;
+            a{ color: white;
+                font-size: 0.875rem;
+                padding: 4px 7px;
+            }
+            :hover {
+                color: #08a6bc;
+            }
+        }
+        .active {
+            border: 2px solid white;
+        }
+    }
+    .slider .arrow-container .arrow-item {
+        font-size: 3rem;
+        height: 80px;
+        width: 80px;
+    }
+    // .slider-container {
+    //     .slider-item {
+    //     height: 959px;
+    //     }
+    // }
+    .desc {
+        font-size: 0.875rem;
+    }
+    .footer-content {
+        font-size: 00.875rem;
+        .widgets {
+            display: flex;
+                .col-3 {
+                    width: 263px;
+                    margin: 0 12px;
+                }
+            .post-item {
+                display: flex;
+                .avt {
+                  height: 70px;
+                  width: 70px;
+                }
+            }
+            .widget-projects-clients .container-project {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-rows: 80px 80px;
+            }
+            .widget-flickr-feed .container-feeds {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-rows: 80px 80px 80px;
+            }
+        }
+        .footer-menu-social .container {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+        }
+        
+    }
+}

@@ -1,0 +1,101 @@
+@media (min-width: 863px) and (max-width: 1024px) {
+
+    .scroll-top-button {
+        right: 24px;
+      }
+      
+    //header sticky menu style
+    .sticky .header-menu {
+        .logo-main-menu {
+            display: none;
+        }
+        .nav-menu .menu-responsive {
+            a{
+                color: #3c3950;
+            }
+            .active {
+                border: 2px solid #3c3950;
+            }
+        } 
+    }
+
+    //header menu style
+    .header-menu {
+        display: flex;
+        flex-direction: column;
+        // justify-content: space-between;
+        justify-content: center;
+        align-items: center;
+        .logo-main-menu {
+            // margin: auto;
+            .menu-icon {
+                display: none;
+            }
+        }
+        .nav-menu {
+            .menu-responsive {
+                display: flex;
+                li {
+                    padding: 12px;
+                    a {
+                        color: white;
+                        font-size: 0.875rem;
+                        padding: 4px 7px;
+                    }
+                }
+                .active {
+                    border: 2px solid white;
+                }
+            }
+            
+        }
+    }
+    
+    //slider style   
+    .big-title {
+        display: inline-block;
+    }
+    // .slider-container {
+    
+    //     .mySlides {
+    //     height: 959px;
+    //     }
+    // }
+    
+    //footer style
+    .footer-content {
+        .logo-brand {
+            padding: 0 21px;
+            }
+        .widgets {
+        display: flex;
+        flex-wrap: wrap;
+        .col-3 {
+            flex: 50%;
+            position: relative;
+            padding: 0 21px;
+            .widget-title {
+                padding: 74px 0 45px;
+                }
+            }
+        }
+        .widget-projects-clients {
+            .group-position {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              .dot {
+                display: inline-block;
+                height: 13px;
+                width: 13px;
+                border-radius: 50%;
+                background-color: #99a9b5;
+                margin: 9px;
+              }
+            }
+          }
+    }
+    
+}
+
+    
